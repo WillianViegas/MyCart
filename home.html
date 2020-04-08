@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Home</title>
+        <link href="home.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <a href="index.html">Sair</a>
+        <header>
+            <h1>My Cart</h1>
+            <img src="carrinho.jpg" class="logo"/>
+        </header>
+        <div id="app">
+            <h2>Guarde aqui suas futuras compras</h2>
+            Insira o Link da promocao
+            <input type="text" class="link"/>
+            <button class="botao">Adicionar Compra</button>
+            <button class="botaoRemover">Remover Compra</button>
+        </div>
+
+    <script>
+    
+    var buttonElement = document.querySelector('.botao');
+    buttonElement.onclick = function(){
+        
+        //cria a div com o estilo
+        var boxElement = document.createElement('div');
+        boxElement.style.width = '100%';
+        boxElement.style.height = 300;
+        boxElement.style.border = '5px solid black';
+        boxElement.style.borderRadius = '5%';
+        boxElement.style.backgroundColor = 'gold';
+        boxElement.style.display = 'flex';
+        boxElement.style.marginTop = 20;
+        boxElement.style.overflow = 'hidden';
+        
+        //adicionando imagem
+        var imgElement = document.createElement('img');
+        imgElement.setAttribute('src', 'calmaPatron.jpg');
+        imgElement.style.width = '30%';
+        imgElement.style.height = 'auto';
+        imgElement.style.border ='5px solid black';
+        
+        //inserindo imagem na div
+        boxElement.appendChild(imgElement);
+        
+        //inserindo o link que foi recebido
+        var inputElement = document.querySelector('input[class=link');
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', inputElement.value);
+
+        //estilo do link
+        var textElement = document.createTextNode(inputElement.value);
+        linkElement.appendChild(textElement);
+        linkElement.style.marginTop = 60;
+        linkElement.style.marginLeft = 20;
+        boxElement.appendChild(linkElement);
+
+        
+        //adiciona ela na div app
+        var containerElement = document.querySelector('#app');
+        containerElement.appendChild(boxElement);
+}
+
+var buttonElement = document.querySelector('.botaoRemover');
+    buttonElement.onclick = function(){
+    }
+ </script>
+</body>
+</html>
